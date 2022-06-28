@@ -1,5 +1,6 @@
 NXOpen::Point3d RKGetLineIntersectionPoint(NXOpen::Point3d& a, NXOpen::Point3d& b, NXOpen::Point3d& c, NXOpen::Point3d& d)
 {
+/*NXOpen::Point3d is class of NXOpen API of NX Siemens, represents a 3d point with attributes x, y, z
     double k1 = (b.X - a.X) / (b.Z - a.Z);
     double m1 = -1 * a.Z * k1 + a.X;
     double k2 = (d.X - c.X) / (d.Z - c.Z);
