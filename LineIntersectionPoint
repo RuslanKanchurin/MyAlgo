@@ -1,0 +1,12 @@
+NXOpen::Point3d RKGetLineIntersectionPoint(NXOpen::Point3d& a, NXOpen::Point3d& b, NXOpen::Point3d& c, NXOpen::Point3d& d)
+{
+    double k1 = (b.X - a.X) / (b.Z - a.Z);
+    double m1 = -1 * a.Z * k1 + a.X;
+    double k2 = (d.X - c.X) / (d.Z - c.Z);
+    double m2 = -1 * c.Z * k2 + c.X;
+    NXOpen::Point3d res;
+    res.Z = (m1 - m2) / (k2 - k1);
+    res.X = k1 * (m1 - m2) / (k2 - k1) + m1;
+    res.Y = 0;
+    return res;
+}
